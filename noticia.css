@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#spanTitle{
+    font-size: 3rem;
+}
+nav{
+    background-color: #33333310;
+}
+
+.col a{
+    text-decoration: none;
+}
+
