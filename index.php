@@ -10,7 +10,7 @@ include_once "conexao.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="noticia.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
     <title>Noticia</title>
 </head>
 
@@ -22,7 +22,7 @@ include_once "conexao.php";
                 <img src="img/pinhar.png" style="width: 200px;" alt="">
             </a>
             <div class="">
-                <a href="index.php"><h2 id="spanTitle" class="d-flex align-items-center justify-content-center">Pinhal News</h5></a>
+                <a href="noticia.php"><h2 id="spanTitle" class="d-flex align-items-center justify-content-center">Pinhal News</h5></a>
                 <h1 class="row p-2" style="margin-left: 200px; font-size: 1rem;">Aqui você fica atualizado até os dente</h1>
             </div>
         </nav>
@@ -56,7 +56,7 @@ include_once "conexao.php";
             </div>
         </nav>
 
-        <main>
+        <main class="main-index">
         <?php 
                 
                 
@@ -69,7 +69,7 @@ include_once "conexao.php";
                     $dados = mysqli_fetch_array($resultado);
                     echo "titulo: ".$dados['titulo'].'<br>';
                     echo "data e hora: ".$dados['datahora'].'<br>';
-                    echo "imagem: ".$dados['imagem'].'<br>';
+                    echo "imagem: <img src='img/".$dados['imagem']."><br>";
                     echo "fonte: ".$dados['fonte'].'<br>';
                     echo "autor: ".$dados['autor'].'<br>';
                     echo "noticia: ".$dados['noticia'].'<br>';
@@ -85,14 +85,15 @@ include_once "conexao.php";
                     $fonte = $dados['fonte'];
                     $autor = $dados['autor'];
                     $noticia = $dados['noticia'];
+                    $img = $dados['imagem'];
 
                 echo'
-            <div class="album py-5 bg-body-tertiary">
-                <div class="row row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="album bg-body-tertiary ">
+                <div class="row row-cols-sm-2 row-cols-md-3 g-3 ">
                     <div class="col ">
                         <a href="#">
                             <div class="card shadow-sm">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" src="'.$dados["imagem"].'" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" src="img/'.$img.'" preserveAspectRatio="xMidYMid slice" focusable="false">
                                 <rect class="p-3" width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">'.$titulo.'</text>
                                 </img>
                                 <div class="card-body">
@@ -129,6 +130,7 @@ include_once "conexao.php";
         </footer>
 
     </div>
+    
 </body>
 
 </html>

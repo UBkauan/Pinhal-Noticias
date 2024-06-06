@@ -15,3 +15,12 @@ nav{
     text-decoration: none;
 }
 
+.album{
+    display: grid;
+    grid-template-columns: grid,grid,grid;
+    background-color: #333;
+}
+
+.card{
+    
+}
