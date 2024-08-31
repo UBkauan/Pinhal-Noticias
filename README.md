@@ -1,1 +1,1 @@
-##School Project (local news site)
+**School Project (local news site)**
